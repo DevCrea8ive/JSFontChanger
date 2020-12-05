@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FontChanger</title>
+</head>
+<body>
+	<b></b><br>
+	<p>Hey, how are you type the name of the FontType, you want to use for this text and remember only Valid fontType can work...!!</p>
+	<hr>
+	<p class="p2">Hey, how are you type the name of the FontType, you want to use for this text and remember only Valid fontType can work...!!</p>
+	
+	<label for="input">Type a Font:</label>
+<input type="text" id="fontIn">
+<label for="input">Font Size</label>
+<input type="text" id="fontSize">
+<button id="fontBtn">Change Font</button>
+
+</body>
+</html>
+
+<script>
+	var fontIn = document.querySelector("#fontIn");
+	var fontBtn = document.getElementById("fontBtn");
+	var fontSize = document.querySelector("#fontSize");
+	var fontType = document.querySelector("p");
+	var load = document.querySelector("b");
+	var fontType2 = document.querySelector(".p2");
+
+	
+
+	fontBtn.onclick = () => {
+		var fontVal = fontIn.value;
+		var fontS = fontSize.value;
+		if(fontVal === '') {
+			alert("You must input a FontType");
+		}else{
+			load.innerHTML = "<pre style='color: green;'>Font Type: " + fontVal + "<br>" + "Font Size:" + fontS + "px" + "</pre>";
+			fontType.style.fontFamily = fontVal;
+			fontType2.style.fontFamily = fontVal;
+			fontType.style.fontSize = fontS + "px";
+			fontType2.style.fontSize = fontS + "px";
+		}
+	
+		
+	}
+	
+</script>
